@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+ <head>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+ 
+ </head>
+ <body>
+    <div class='container mt-5 border border-bottom-0 border-secondary pt-2 pb-4 rounded shadow-lg'>
+     <h1>SignUp in order to enter movie website</h1>
+     <form>
+         <div class="mx-auto d-block mb-3 w-50">
+             <label for="username">Username</label>
+             <div class='input-group'>
+                 <input type="text" id='username' placeholder="UserName" class='form-control'>
+             </div>
+         </div>
+         <div class='form-row'>
+             <div class='col-md-6 mb-3'>
+                 <label for="email">Email</label>
+                 <input type='email' id='email' placeholder="Email" class='form-control'>
+             </div>
+             <div class='col-md-6' mb-3>
+                <label for="password">Password</label>
+                <input type='password' id='password' placeholder="Password" class='form-control'>
+             </div>
+         </div>
+     </form>
+     <button type='button' id='signup' class='btn btn-secondary text-white '>SignUp</button>
+     <button type='button' id='login' data-toggle='modal' data-target='#modal' class='btn btn-danger'>Login</button>
+    </div>
+
+    <div id='modal' class='modal'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+                <div class='modal-header'>
+                    <h5 class='text-black shadow bg-light px-2 py-2'>Login</h5>
+                    <button type='button' class='close bg-light' data-dismiss='modal'>
+                        <span>&times;</span>
+                    </button>    
+                </div>
+                <div class='modal-body mx-auto'>
+                    <form>
+                            <div class='form-group'>
+                                 <label for="username-modal" class='col-sm-2'>Username</label>
+                                 <input type='text' id='username-modal' placeholder="Username" class='form-control'>
+                                </div>
+                                <div class='form-group>
+                                  <label for="password-modal" class='col-sm-2'>Password</label>
+                                  <input type='password' id='password-modal' placeholder="Password" class='form-control'>
+                                </div>
+                    </form>
+                </div>
+                <div class='modal-footer'>
+                    <button class='btn btn-secondary text-white' type='button' id='login-modal'>Login</button>
+                    <button type='button' class='btn btn-danger text-white' data-dismiss='modal'>Close</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+  
+
+    <script>
+      var email=document.getElementById('email')
+      var password=document.getElementById('password')
+      var username=document.getElementById('username')
+      var passwordModal=document.getElementById('password-modal')
+      var usernameModal=document.getElementById('username-modal')
+
+      function showing(){
+          var identity=[]
+          identity.push(email.value,password.value,username.value)
+          
+          alert('your username is '+identity[2]+ ' your password is'+'\n'+identity[1]+'\n'+' your email is '+'\n'+identity[0])
+      }
+          function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+      document.getElementById('signup').onclick=function(){
+          if(password.value==''|| email.value==''||username==''){
+              alert('Please insert your password and username')
+
+          }else if(validateEmail(email.value)==false){
+              alert('Please insert a valid email')
+          }else{
+              alert('you registered succesfully and you can login now');
+              showing()
+          }
+      }
+
+
+document.getElementById('login-modal').onclick=function(){
+    var holder=[]
+
+    holder.push(username.value,password.value)
+
+    if(usernameModal.value==''||passwordModal.value==''){
+        alert('Please insert your Username and Password');
+
+    }else if(usernameModal.value==holder[0]&&passwordModal.value==holder[1]){
+        alert(window.location.href='movieList/index.html')
+    }else{
+        alert('Please sign up first');
+    }
+}
+
+
+
+    </script>
+
+ </body>
+</html>
