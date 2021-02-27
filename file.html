@@ -6,33 +6,34 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
- 
+
  </head>
  <body>
     <div class='container mt-5 border border-bottom-0 border-secondary pt-2 pb-4 rounded shadow-lg'>
-     <h1 class="container_header">SignUp in order to enter movie website</h1>
+     <h1>SignUp in order to enter movie website</h1>
      <form>
-         <div class="mx-auto d-block mb-3 w-50 ">
+         <div class="mx-auto d-block mb-3 w-50">
              <label for="username">Username</label>
              <div class='input-group'>
                  <input type="text" id='username' placeholder="UserName" class='form-control'>
              </div>
          </div>
          <div class='form-row'>
-             <div class='mx-auto d-block mb-3 w-50 col-md-12 '>
+             <div class='col-md-12 mb-3'>
                  <label for="email">Email</label>
                  <input type='email' id='email' placeholder="Email" class='form-control'>
              </div>
-             <div class='col-md-12'>
+             <div class='col-md-12 ' mb-3>
                 <label for="password">Password</label>
                 <input type='password' id='password' placeholder="Password" class='form-control'>
              </div>
          </div>
      </form>
-     <div class="buttons">
-        <button type='button' id='signup' class='btn btn-secondary text-white '>SignUp</button>
-        <button type='button' id='login' data-toggle='modal' data-target='#modal' class='btn btn-danger'>Login</button>
-     </div>
+        <div class="buttons">
+            <button type='button' id='signup' class='btn btn-secondary text-white '>SignUp</button>
+            <button type='button' id='login' data-toggle='modal' data-target='#modal' class='btn btn-danger'>Login</button>
+            
+        </div> 
     </div>
 
     <div id='modal' class='modal'>
@@ -57,7 +58,7 @@
                     </form>
                 </div>
                 <div class='modal-footer'>
-                    <button class='btn btn-secondary text-white' type='button' id='login-modal'  >Login</button>
+                    <button class='btn btn-secondary text-white' type='button' id='login-modal'>Login</button>
                     <button type='button' class='btn btn-danger text-white' data-dismiss='modal'>Close</button>
                 </div>
 
@@ -66,7 +67,7 @@
         </div>
 
     </div>
-  
+
 
     <script>
       var email=document.getElementById('email')
@@ -78,7 +79,7 @@
       function showing(){
           var identity=[]
           identity.push(email.value,password.value,username.value)
-          
+
           alert('your username is '+identity[2]+ ' your password is'+'\n'+identity[1]+'\n'+' your email is '+'\n'+identity[0])
       }
           function validateEmail(email) {
@@ -107,7 +108,7 @@ document.getElementById('login-modal').onclick=function(){
         alert('Please insert your Username and Password');
 
     }else if(usernameModal.value==holder[0]&&passwordModal.value==holder[1]){
-        window.location.href='movieList/index.html'`
+        window.location.href='movieList/index.html'
     }else{
         alert('Please sign up first');
     }
@@ -118,4 +119,4 @@ document.getElementById('login-modal').onclick=function(){
     </script>
 
  </body>
-</html>
+</html> 
