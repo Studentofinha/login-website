@@ -1,8 +1,23 @@
 body{
-    background-color: #373b69;
+    background-color: #fff;
 }
 h1{
-    align-items: center;
-    display: block;
-    margin-left: 180px;
+    text-align: center;
+    margin: 0 20px;
+}
+.container{
+    width: 600px;
+}
+.container_header{
+
+}
+.form-row{
+    margin: 10px 50px;
+
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 60px;
 }

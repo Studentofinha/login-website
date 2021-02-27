@@ -10,27 +10,29 @@
  </head>
  <body>
     <div class='container mt-5 border border-bottom-0 border-secondary pt-2 pb-4 rounded shadow-lg'>
-     <h1>SignUp in order to enter movie website</h1>
+     <h1 class="container_header">SignUp in order to enter movie website</h1>
      <form>
-         <div class="mx-auto d-block mb-3 w-50">
+         <div class="mx-auto d-block mb-3 w-50 ">
              <label for="username">Username</label>
              <div class='input-group'>
                  <input type="text" id='username' placeholder="UserName" class='form-control'>
              </div>
          </div>
          <div class='form-row'>
-             <div class='col-md-6 mb-3'>
+             <div class='mx-auto d-block mb-3 w-50 col-md-12 '>
                  <label for="email">Email</label>
                  <input type='email' id='email' placeholder="Email" class='form-control'>
              </div>
-             <div class='col-md-6' mb-3>
+             <div class='col-md-12'>
                 <label for="password">Password</label>
                 <input type='password' id='password' placeholder="Password" class='form-control'>
              </div>
          </div>
      </form>
-     <button type='button' id='signup' class='btn btn-secondary text-white '>SignUp</button>
-     <button type='button' id='login' data-toggle='modal' data-target='#modal' class='btn btn-danger'>Login</button>
+     <div class="buttons">
+        <button type='button' id='signup' class='btn btn-secondary text-white '>SignUp</button>
+        <button type='button' id='login' data-toggle='modal' data-target='#modal' class='btn btn-danger'>Login</button>
+     </div>
     </div>
 
     <div id='modal' class='modal'>
@@ -55,7 +57,7 @@
                     </form>
                 </div>
                 <div class='modal-footer'>
-                    <button class='btn btn-secondary text-white' type='button' id='login-modal'>Login</button>
+                    <button class='btn btn-secondary text-white' type='button' id='login-modal'  >Login</button>
                     <button type='button' class='btn btn-danger text-white' data-dismiss='modal'>Close</button>
                 </div>
 
@@ -105,7 +107,7 @@ document.getElementById('login-modal').onclick=function(){
         alert('Please insert your Username and Password');
 
     }else if(usernameModal.value==holder[0]&&passwordModal.value==holder[1]){
-        alert(window.location.href='movieList/index.html')
+        window.location.href='movieList/index.html'`
     }else{
         alert('Please sign up first');
     }
